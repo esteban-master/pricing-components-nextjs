@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background;
+}
+
+.image {
+  background-image: url("/images/bg-top.svg"), url("/images/bg-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right -12rem top -2.5rem, left bottom;
+}
+
+/* .image-position {
+  background-position: right -12rem top -2.5rem;
+} */
+
+@media (min-width: 1024px) {
+  .image {
+    background-position: right top, left bottom;
+  }
+}
+
+#toggle:checked ~ label div.toggle-bolita {
+  @apply translate-x-5;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Switch } from "./components/Switch";
-import { ListPrices } from "./components/ListPrices";
+import { Switch } from "../../components/Switch";
+import { ListPrices } from "../../components/ListPrices";
 
 export interface Price {
   type: "Basic" | "Professional" | "Master";

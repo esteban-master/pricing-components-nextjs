@@ -1,4 +1,4 @@
-import { Price } from "../index";
+import { Price } from "../pages/pricing-component-with-toggle/index";
 
 export const CardPrice = ({
   dark,

@@ -1,4 +1,4 @@
-import { Price } from "../index";
+import { Price } from "../pages/pricing-component-with-toggle";
 import { CardPrice } from "./CardPrice";
 
 export const ListPrices = ({

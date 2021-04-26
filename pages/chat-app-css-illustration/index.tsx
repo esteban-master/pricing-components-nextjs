@@ -1,4 +1,4 @@
-import { Celular } from "./components/Celular";
+import { Celular } from "../../components/Celular";
 
 const ChatApp = () => {
   return (

@@ -1,9 +1,9 @@
-import { Celular } from "../../components/Celular";
+import { Celular } from "../../components/chat-app-css-illustration/Celular";
 
 const ChatApp = () => {
   return (
     <div className="bg-gray-100 h-screen font-principal-chat-app ">
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative h-full w-full overflow-x-hidden">
         <div className="absolute z-0 bg-gradient-to-r from-purple-600 to-fuchsia-500 h-172 w-120 rounded-b-full -top-40 -left-72 md:-left-12"></div>
         <div className="relative z-10 pt-16 flex flex-col items-center md:flex-row md:justify-center md:space-x-12 md:items-center md:my-20">
           <Celular />

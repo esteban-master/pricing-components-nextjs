@@ -1,57 +1,44 @@
-import { useState } from "react";
-import { Switch } from "../components/Switch";
-import { ListPrices } from "../components/ListPrices";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { CardChallenge } from "../components/CardChallenge";
 
-export interface Price {
-  type: "Basic" | "Professional" | "Master";
-  price: { monthly: string; annually: string };
-  features: string[];
-}
+export type Challenge = {
+  name: string;
+  path: string;
+  img: string;
+};
 
-const data: Price[] = [
-  {
-    type: "Basic",
-    price: { monthly: "19.99", annually: "199.99" },
-    features: ["500 GB Storage", "2 Users Allowed", "Send up to 3 GB"],
-  },
-  {
-    type: "Professional",
-    price: { monthly: "24.99", annually: "249.99" },
-    features: ["1 TB Storage", "5 Users Allowed", "Send up to 10 GB"],
-  },
-  {
-    type: "Master",
-    price: { monthly: "39.99", annually: "399.99" },
-    features: ["2 TB Storage", "10 Users Allowed", "Send up to 20 GB"],
-  },
-];
-
-export default function Home() {
-  const [typePrice, setTypePrice] = useState<"Monthly" | "Annually">("Monthly");
-
-  function handleChecked(check: boolean) {
-    if (check) {
-      setTypePrice("Monthly");
-    } else {
-      setTypePrice("Annually");
-    }
-  }
-
+export default function Home({ challenges }: { challenges: Challenge[] }) {
   return (
-    <div className="image ">
-      <div className="container mx-auto p-10">
-        <div className=" flex flex-col items-center p-3">
-          <div className=" w-60 p-1 space-y-6  text-principal-light font-principal">
-            <h2 className="text-3xl  text-center">Our Pricing</h2>
-            <div className="flex justify-center space-x-3">
-              <span>Anually</span>
-              <Switch onChecked={handleChecked} />
-              <span>Monthly</span>
-            </div>
-          </div>
-          <ListPrices prices={data} typePrice={typePrice} />
-        </div>
+    <div className="container mx-auto ">
+      <h1 className="mt-10 text-4xl font-bold">Challenges Frontend Mentor</h1>
+
+      <div className="grid grid-cols-3 mt-10 gap-5">
+        {challenges.map((challenge) => (
+          <CardChallenge key={challenge.name} challenge={challenge} />
+        ))}
       </div>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const challenges: Challenge[] = [
+    {
+      name: "Chat App Css Illustration",
+      path: "/chat-app-css-illustration",
+      img:
+        "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto,w_700/Challenges/xi4n6u5jtftsy9sbukd1.jpg",
+    },
+    {
+      name: "Pricing Component With Toggle",
+      path: "/pricing-component-with-toggle",
+      img:
+        "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto,w_700/Challenges/sjsrx7m77v6pxswdm0mx.jpg",
+    },
+  ];
+  return {
+    props: {
+      challenges,
+    },
+  };
+};

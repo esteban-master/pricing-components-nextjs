@@ -1,4 +1,4 @@
-import { Price } from "../pages";
+import { Price } from "../index";
 import { CardPrice } from "./CardPrice";
 
 export const ListPrices = ({
@@ -9,14 +9,13 @@ export const ListPrices = ({
   typePrice: "Annually" | "Monthly";
 }) => {
   return (
-    <div className="max-w-6xl flex flex-col mlg:items-center space-y-5 lg:flex-row  lg:space-y-0 m-16 lg:mt-24 ">
+    <div className="lista lg:items-center space-y-5 lg:flex-row  lg:space-y-0 m-16 lg:mt-24  ">
       {prices.map((item, i) => (
         <CardPrice
           key={i}
           item={item}
           dark={i % 2 === 1}
           typePrice={typePrice}
-          scale={i % 2 === 1}
         />
       ))}
     </div>

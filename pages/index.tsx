@@ -5,6 +5,7 @@ export type Challenge = {
   name: string;
   path: string;
   img: string;
+  link: string;
 };
 
 export default function Home({ challenges }: { challenges: Challenge[] }) {
@@ -26,14 +27,14 @@ export const getStaticProps: GetStaticProps = async () => {
     {
       name: "Chat App Css Illustration",
       path: "/chat-app-css-illustration",
-      img:
-        "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto,w_700/Challenges/xi4n6u5jtftsy9sbukd1.jpg",
+      img: "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto,w_700/Challenges/xi4n6u5jtftsy9sbukd1.jpg",
+      link: "https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY",
     },
     {
       name: "Pricing Component With Toggle",
       path: "/pricing-component-with-toggle",
-      img:
-        "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto,w_700/Challenges/sjsrx7m77v6pxswdm0mx.jpg",
+      img: "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto,w_700/Challenges/sjsrx7m77v6pxswdm0mx.jpg",
+      link: "https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC",
     },
   ];
   return {
